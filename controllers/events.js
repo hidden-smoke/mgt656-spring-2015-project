@@ -71,8 +71,12 @@ if (value > maxVal || value < minVal) {
 function saveEvent(request, response){
   var contextData = {errors: []};
 
-  if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+  if (validator.isLength(request.body.title, 1, 49) === false) {
+    contextData.errors.push('Your title should be less than 50 letters.');
+  }
+  
+   if (validator.isLength(request.body.location, 1, 49) === false) {
+    contextData.errors.push('Your location should be less than 50 letters.');
   }
 
 var year = checkIntRange(request,'year',2015,2016,contextData);
