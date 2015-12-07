@@ -478,11 +478,7 @@ describe('The form for creating new events',function(){
         assert.ok(err === null, 'Error: ' + err);
         assert.ok(httpResponse.statusCode === 200, 'Expected status code 200, but got' + httpResponse.statusCode);
         var window = jsdom.jsdom(body).defaultView;
-<<<<<<< HEAD
-         var formErrors = window.document.querySelector('ul.form-errors');
-=======
-       var formErrors = window.document.querySelector('ul.form-errors');
->>>>>>> test-modification
+        var formErrors = window.document.querySelector('ul.form-errors');
         assert.ok(formErrors, 'Error page should contain form errors.');
         var errorListItems = formErrors.getElementsByTagName('li');
         assert.ok(errorListItems, 'Expected form errors.');
@@ -515,9 +511,9 @@ describe('The form for creating new events',function(){
   after(function(done){
     this.server.close(done);
   });
-<<<<<<< HEAD
+
 });
  
-=======
-});
->>>>>>> test-modification
+
+
+
