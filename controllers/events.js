@@ -106,6 +106,7 @@ function saveEvent(request, response){
   }else{
     response.render('create-event.html', contextData);
   }
+  
 }
 
 function eventDetail (request, response) {
@@ -155,6 +156,8 @@ function api(request, response){
  
   response.json(output);
 }
+
+
 
 /**
  * Export all our functions (controllers in this case, because they
