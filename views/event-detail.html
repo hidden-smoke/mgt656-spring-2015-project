@@ -1,7 +1,80 @@
-{% extends "layout.html" %}
 
+{% block header %}
+      <header>Hidden Smoke</header>
+    {% endblock %}
+    
+    {% block h1 %}
+      <section>Event Details</section>
+    {% endblock %}
+    
 {% block mainContent %}
 
-hello world
+ <form id="Event Detail" method="post">
+      <label for="RSVP">To RSVP Insert Email Address:</label>
+    <input type="id" name="Email">
+    
+     
+      
+        </select>
+        <input id="submit" type="submit">
+        
+ 
+    To help with financing the event please <a href="/donate">Donate</a> here
+    
+     
+ 
+       
+   
+   	<body class="container">
+
+    
+   <style>
+    header {
+      text-align: center;
+      background: url('http://dash.ga.co/assets/jeff-bg.png');
+      background-size: cover;
+      color: white;
+    }
+    a {
+      color: #00FFFF;
+    }
+    body {
+  text-align: center;
+  background: black;
+  color: white;
+  font-family: helvetica;
+  font-size: 20;
+  font-style: italic;
+}
+footer {
+  text-align: left;
+  background: Gray;
+  color: #00FFFF;
+}
+    h1 {
+      font-size: 70px;
+      text-align: center;
+      color: Gray;
+    }
+    img {
+      margin: 40px 0px 0px 0px;
+      border: 7px solid white;
+      border-radius: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    ul {
+      padding: 12px;
+      background: black;
+      text-align: left;
+      
+          }
+    li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
+  </style>
+  </head>    
 {% endblock %}
 
