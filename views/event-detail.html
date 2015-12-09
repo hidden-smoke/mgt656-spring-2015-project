@@ -19,17 +19,17 @@
   {% endif %}   
 
 <h1 id="title">{{event.title}}</h1>
-
+<img id="image" src="{{event.image}}"></img>
 <span id="date">{{event.date|prettyDate}}</span>
 <span id="location">{{event.location}}</span>
+
 
 
  <form id="EventDetail" method="post">
       <label for="RSVP">To RSVP Insert Email Address:</label>
    <p1>
     <input type="id" name="email">
-    
-    <input id="submit" type="submit">
+    <button type="submit">Submit</button>
      </p1>  
 
    </form>
