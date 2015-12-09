@@ -1,80 +1,55 @@
-
+{% extends "layout.html" %}
 {% block header %}
       <header>Hidden Smoke</header>
     {% endblock %}
-    
-    {% block h1 %}
-      <section>Event Details</section>
-    {% endblock %}
+ 
+
     
 {% block mainContent %}
 
- <form id="Event Detail" method="post">
+  {% if errors %}
+    <div>
+      <p>Please correct the following errors!</p>
+      <ul class="form-errors">
+        {% for error in errors %}
+          <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}   
+
+<h1 id="title">{{event.title}}</h1>
+
+<span id="date">{{event.date|prettyDate}}</span>
+<span id="location">{{event.location}}</span>
+
+
+ <form id="EventDetail" method="post">
       <label for="RSVP">To RSVP Insert Email Address:</label>
-    <input type="id" name="Email">
+   <p1>
+    <input type="id" name="email">
     
-     
-      
-        </select>
-        <input id="submit" type="submit">
-        
+    <input id="submit" type="submit">
+     </p1>  
+
+   </form>
  
-    To help with financing the event please <a href="/donate">Donate</a> here
-    
-     
- 
-       
+   <p> To help with financing the event please <a href="/donate">Donate</a> here</p>
    
+<ul>
+  {% for attendees in event.attending %}
+    <li class="rsvp">
+    {{attendees}}
+    </li>
+  {% endfor %}
+</ul>
+
+ 
+      
    	<body class="container">
 
     
-   <style>
-    header {
-      text-align: center;
-      background: url('http://dash.ga.co/assets/jeff-bg.png');
-      background-size: cover;
-      color: white;
-    }
-    a {
-      color: #00FFFF;
-    }
-    body {
-  text-align: center;
-  background: black;
-  color: white;
-  font-family: helvetica;
-  font-size: 20;
-  font-style: italic;
-}
-footer {
-  text-align: left;
-  background: Gray;
-  color: #00FFFF;
-}
-    h1 {
-      font-size: 70px;
-      text-align: center;
-      color: Gray;
-    }
-    img {
-      margin: 40px 0px 0px 0px;
-      border: 7px solid white;
-      border-radius: 20px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    ul {
-      padding: 12px;
-      background: black;
-      text-align: left;
-      
-          }
-    li {
-      display: inline;
-      padding: 0px 10px 0px 10px;
-    }
-  </style>
-  </head>    
+   
+  
 {% endblock %}
 

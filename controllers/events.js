@@ -116,6 +116,11 @@ function eventDetail (request, response) {
   response.render('event-detail.html', {event: ev});
 }
 
+function donate (request, response) {
+
+  response.render('donate.html');
+}
+
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
@@ -130,6 +135,7 @@ function rsvp (request, response){
     contextData.errors.push('Invalid email');
     response.render('event-detail.html', contextData);    
   }
+  
 
 }
 
@@ -160,5 +166,6 @@ module.exports = {
   'newEvent': newEvent,
   'saveEvent': saveEvent,
   'rsvp': rsvp,
-  'api': api
+  'api': api,
+  'donate': donate
 };
