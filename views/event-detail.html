@@ -19,9 +19,10 @@
   {% endif %}   
 
 <h1 id="title">{{event.title}}</h1>
-<img id="image" src="{{event.image}}"></img>
 <span id="date">{{event.date|prettyDate}}</span>
 <span id="location">{{event.location}}</span>
+<img id="image" src="{{event.image}}"></img>
+
 
 
 
@@ -36,7 +37,7 @@
  
    <p> To help with financing the event please <a href="/donate">Donate</a> here</p>
    
-<ul>
+<ul id="attendees">
   {% for attendees in event.attending %}
     <li class="rsvp">
     {{attendees}}
