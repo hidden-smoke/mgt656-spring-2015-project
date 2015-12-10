@@ -21,7 +21,7 @@
 <h1 id="title">{{event.title}}</h1>
 <span id="date">{{event.date|prettyDate}}</span>
 <span id="location">{{event.location}}</span>
-<img id="image" src="{{event.image}}"></img>
+<img id="image" src="{{event.image}}" ></img>
 
 
 
@@ -35,7 +35,7 @@
 
    </form>
  
-   <p> To help with financing the event please <a href="/donate">Donate</a> here</p>
+   <p> To help with financing the event please <a href="/donate" class="donation">Donate</a> here</p>
    
 <ul id="attendees">
   {% for attendees in event.attending %}
@@ -49,7 +49,34 @@
       
    	<body class="container">
 
-    
+    <!-- Load the Content Experiment JavaScript API client for the experiment --> 
+ <script src="//www.google-analytics.com/cx/api.js?experiment=TScyABO4TjiFLqAQb8glfQ"></script> 
+ 
+ 
+<!-- Load the JQuery library --> 
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> 
+ 
+ 
+ <script> 
+ // Define JavaScript for each page variation of this experiment. 
+ var pageVariations = [ 
+ function() {},  // Original: Do nothing. This will render the default HTML. 
+   function() {    // Variation 1: add RSVP text 
+     $( 'a.donation' ).text( 'support' ); 
+   } 
+ ]; 
+ 
+ 
+// Wait for the DOM to load, then execute the view for the chosen variation. 
+ $(document).ready(function(){ 
+   // Ask Google Analytics which variation to show the user. 
+   var chosenVariation = cxApi.chooseVariation(); 
+
+   // Execute the chosen view 
+   pageVariations[chosenVariation](); 
+ }); 
+ </script> 
+
    
   
 {% endblock %}
