@@ -13,6 +13,7 @@ function index (request, response) {
     'events': []
     
   };
+  console.log(events);
   for (var i=0 ; i<events.all.length ; i++)
   {
     var event=events.all[i];

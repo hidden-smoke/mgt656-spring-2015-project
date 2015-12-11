@@ -101,7 +101,9 @@ function saveEvent(request, response){
       date: new Date(),
       attending: []
     };
+
     events.all.push(newEvent);
+
     response.redirect('/events/' + newEvent.id);
   }else{
     response.render('create-event.html', contextData);
@@ -118,7 +120,6 @@ function eventDetail (request, response) {
 }
 
 function donate (request, response) {
-
   response.render('donate.html');
 }
 
